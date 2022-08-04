@@ -19,8 +19,8 @@ $pegeUrl = $_SERVER['PHP_SELF'];
    <tbody>
    <form class = "d-flex" method ="get" action="<?=$pageUrl?>" id = "cercaform">
    <select class ="d-flex" id = "ruolo" name = "ruolo" >
-   <option name = "ruolo" value="proprietario">proprietario</option>
-    <option  name = "ruolo" value="cliente">cliente</option>
+   <option name = "ruolo" value="proprietario">Proprietari</option>
+    <option  name = "ruolo" value="cliente">Clienti</option>
    </select>
    
         <button class="btn btn-light btn-sm" type="submit"> Search  <i class="fas fa-search"></i></button></form>

@@ -48,7 +48,7 @@ $pegeUrl = $_SERVER['PHP_SELF'];
                         
                            <input class="form-control "  type="date" name = "data_prenotazione" id="data_prenotazione" value="data_prenotazione" placeholder="Search" aria-label="Search">
                         
-                           <button class="btn btn-light btn-sm" type="submit"> prenota  <i class="fas fa-share"></i></button>
+                           <button class="form-control" type="submit"> prenota  <i class="fas fa-share"></i></button>
                           
                           </form>
                           </div>

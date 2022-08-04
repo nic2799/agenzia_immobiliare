@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
      
-       <i class="fa fa-user fa-lg "></i></a>
+      <i class="fas fa-user-tie"></i></a>
 
       <?php
       $currentUrl= $_SERVER['PHP_SELF'];

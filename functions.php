@@ -85,6 +85,7 @@ function getImmobili( array $params = []){
     $limit = (int)array_key_exists('recordsPerPage', $params) ? $params['recordsPerPage'] : 5;
     $page = (int)array_key_exists('page', $params) ? $params['page'] : 0;
     $cerca = array_key_exists('cerca', $params) ? $params['cerca'] : '';
+    $sessionadmin = $_SESSION['admin'];
    $start = 5 *($page -1);
     if($start<0){
         $start = 0;
@@ -113,6 +114,7 @@ function getImmobili( array $params = []){
     
     
     if($res){
+        if(!($sessionadmin=='admin')){
         
         while($row = $res->fetch_assoc()){// fecth assoc crea un array associativo dalla query
             if($row['stato']=='nonAcquistata' || $row['stato']==''){
@@ -121,7 +123,12 @@ function getImmobili( array $params = []){
             //echo ' no ';
         }
     }
-    
+}else{
+    while($row = $res->fetch_assoc()){
+        $records[]=$row;
+    }
+
+}
       
 
     }else{echo "problema";}

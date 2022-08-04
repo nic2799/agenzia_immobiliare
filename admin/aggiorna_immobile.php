@@ -43,17 +43,22 @@ input[type=text] {
         
         <div class="center">
           
-<img src="gifa3.gif" class="rounded mx-auto d-block" alt="" height="240px" width="">  
+<?php
+
+   $idimmobile = $_GET['id'];
+
+
+?> 
   
   
-  <form class="form" action="<?=$updateurl?>" id=homeform name="homeform" method="post">
+  <form class="form" action="<?=$updateurl?>?id_immobil=<?=$idimmobile?>" id=homeform name="homeform" method="post">
     
           <input type="text" class = "form-control" name="indirizzo" placeholder="inserisci indirizzo"/>
           <input type="number" class = "form-control" name="prezzo" placeholder="inserisci prezzo"/>
           <input type="text" class = "form-control"name ="descrizione" placeholder="inserisci descrizione"/>
           <input type="url" class = "form-control" name ="immagine" placeholder="inserisci url immagine"/>
           <input type="text" class = "form-control" name ="username_del_proprietario" placeholder="inserisci username del proprietario"/>
-         
+          <input type="text" class = "form-control" name ="stato" placeholder="inserisci stato"/>
           
           
           

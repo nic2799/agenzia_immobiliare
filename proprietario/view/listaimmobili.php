@@ -10,7 +10,7 @@ $pegeUrl = $_SERVER['PHP_SELF'];
         <th>prezzo</th>
         <th>Descrizione</th>
         <th>immagine</th>
-        <th>acquista/elimina</th>
+        
        
        
 

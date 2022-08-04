@@ -44,6 +44,13 @@ $pegeUrl = $_SERVER['PHP_SELF'];
                     </a>
                     </div>
                     </div>
+                    <div class="row">
+                        <div class = "col-md-4">
+                        <a  class ="btn btn-success" href="http://localhost/SWBD/esame-swbd/admin/aggiorna_immobile.php?id=<?=$immobili['id_immobile']?>">
+                    update <i class="fas fa-edit"></i>
+                    </a>
+                    </div>
+                    </div>
                     
                        
                         

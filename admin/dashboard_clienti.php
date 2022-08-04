@@ -10,7 +10,7 @@ $recordsPerPage = getConfig('recordsPerPage');//cera par sull ul
 $cerca = getParam('cerca','');
 $test = getParam('test','');
 $page = getParam('page',1);
-$role = getParam('ruolo','');
+$role = getParam('ruolo','utenti');
 
 require_once 'view/navbar.php';?>
 

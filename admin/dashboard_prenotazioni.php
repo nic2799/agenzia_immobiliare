@@ -29,7 +29,7 @@ require_once 'view/navbar.php';?>
 
       
 
-    <h1 class="mt-5">  Registrati </h1>
+    <h1 class="mt-5"> Lista Prenotazioni </h1>
     <?php
  
     

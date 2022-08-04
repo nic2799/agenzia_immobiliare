@@ -32,9 +32,28 @@ if(isset($_POST['indirizzo'])){
  //$test = "INSERT into `utente` (username,email,password,Nome,Cognome)
  //VALUES ('$username','$email','$password','$Nome','$Cognome')";
   $res = $conn->query($query);
+  if ($res) {
+ 
+              
+    echo "<div class='columns is-centered is-mobile'> 
+    <div class='box'>
+    <div class='form-control'>
+    <h3>inserimento avvenuto con successo</h3><br/>
+    <p class='link'>Clicca qui per <a href='http://localhost:80/swbd/esame-swbd/admin/inserisci_immobile.php'>tornare indietro</a>.</p>
+    </div></div></div>";
+ 
+} else {
+    echo "<div class='columns is-centered is-mobile'> 
+    <div class='box'>
+    <div class='form'>
+    <h3>Errore</h3><br/>
+    <p class='link'>Clicca qui per <a href='http://localhost:80/swbd/esame-swbd/admin/inserisci_immobile.php'>tornare indietro</a>.</p>
+    </div></div></div>";
+}
+
   //$tes = $conn->query($test);
 
-  header("Location: http://localhost:80/SWBD/esame-swbd/admin/inserisci_immobile.php");
+  //header("Location: http://localhost:80/SWBD/esame-swbd/admin/inserisci_immobile.php");
 
 
 
@@ -115,4 +134,30 @@ $res = $conn->query($sql);
   
 return $records;
 }
+
+
+if(isset($_GET['id_immobil'])){
+  $id = $_GET['id_immobil'];
+  $indirizzo = $_POST['indirizzo'];
+  $prezzo = $_POST['prezzo'];
+  $descrizione = $_POST['descrizione'];
+  $immagine = $_POST['immagine'];
+  $username_del_proprietario = $_POST['username_del_proprietario'];
+  $stato = $_POST['stato'];
+  
+  $conn = $GLOBALS['mysqli'];
+ 
+  $query  = "UPDATE `immobili` SET indirizzo='$indirizzo',prezzo='$prezzo',descrizione='$descrizione',immagine='$immagine',username_del_proprietario='$username_del_proprietario',stato = '$stato'
+  WHERE id_immobile = '$id'";
+ 
+  //$test = "INSERT into `utente` (username,email,password,Nome,Cognome)
+  //VALUES ('$username','$email','$password','$Nome','$Cognome')";
+   $res = $conn->query($query);
+   if($res){
+   header("Location: http://localhost:80/SWBD/esame-swbd/admin/index.php");
+   }
+   
+
+}
  ?>
+

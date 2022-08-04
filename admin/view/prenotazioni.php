@@ -5,6 +5,7 @@ $pegeUrl = $_SERVER['PHP_SELF'];
    <thead>
     <tr> <th colspan="5">date delle prenotazioni</th></tr>
     <tr>
+    <th>id prenotazione</th>
     <th>id immobile</th>
         <th>anno/mese/giorno</th><!-- o anche page senza serve o scrivi direttamente $_SERVER[..] poi passiamo orderby-->
         <th>proprietario</th>
@@ -25,6 +26,7 @@ $pegeUrl = $_SERVER['PHP_SELF'];
             
         
             <tr>
+            <td><?=$prenotato['id_prenotazione']?></td>
             <td><?=$prenotato['idimmobile']?></td>
                 <td><?=$prenotato['data']?></td>
                 <td><?=$prenotato['usernameProp']?></td>

@@ -28,10 +28,14 @@ if(isset($_POST['username'])){
               
               
 
-            }else{
+            }else if($ruolo == 'proprietario'){
                 $_SESSION['proprietario']=$ruolo;
                 header( "location: ../esame-swbd/proprietario/index.php");
             
+            }else{
+                $_SESSION['admin']=$ruolo;
+                header( "location: ../esame-swbd/admin/index.php");
+
             }
         } else {
             echo "<div class='columns is-centered is-mobile'> 

@@ -112,7 +112,7 @@ if($cerca){
 
   
  
-  //$sql.= " ORDER BY id_immobile LIMIT $start, 5 ";
+  $sql.= " ORDER BY id_immobile LIMIT $start, 5 ";
   //echo $sql;
   
  
