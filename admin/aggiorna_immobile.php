@@ -46,12 +46,17 @@ input[type=text] {
 <?php
 
    $idimmobile = $_GET['id'];
-
-
+   $indirizzo = $_GET['indirizzo'];
+   $prezzo = $_GET['prezzo'];
+   $descrizione = $_GET['descrizione'];
+   $immagine = $_GET['immagine'];
+   $user_del_prop = $_GET['userdelprop'];
+   $state = $_GET['state'];
+   echo $indirizzo . ' ' .$prezzo;
 ?> 
   
   
-  <form class="form" action="<?=$updateurl?>?id_immobil=<?=$idimmobile?>" id=homeform name="homeform" method="post">
+  <form class="form" action="<?=$updateurl?>?id_immobil=<?=$idimmobile?>&ind=<?=$indirizzo?>&prezz=<?=$prezzo?>&desc=<?=$descrizione?>&imm=<?=$immagine?>&userprop=<?=$user_del_prop?>&state=<?=$state?>" id=homeform name="homeform" method="post">
     
           <input type="text" class = "form-control" name="indirizzo" placeholder="inserisci indirizzo"/>
           <input type="number" class = "form-control" name="prezzo" placeholder="inserisci prezzo"/>

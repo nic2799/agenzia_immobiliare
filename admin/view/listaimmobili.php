@@ -7,10 +7,12 @@ $pegeUrl = $_SERVER['PHP_SELF'];
     <tr>
         <th>ID</th><!-- o anche page senza serve o scrivi direttamente $_SERVER[..] poi passiamo orderby-->
         <th>indirizzo</th><!--quidi di base diamo questa stringa username ecc a orderby poi href è sulla pagina stessa e imponiamo orderby a quella stringa -->
+        <th>   username proprietario  </th>
         <th>prezzo</th>
         <th>Descrizione</th>
         <th>immagine</th>
-        <th>acquista/elimina</th>
+        <th>stato</th>
+        <th>update/delete</th>
        
        
 
@@ -28,9 +30,11 @@ $pegeUrl = $_SERVER['PHP_SELF'];
             <tr>
                 <td><?=$immobili['id_immobile']?></td>
                 <td>   <?=$immobili['indirizzo']?> </td>
+                <td>   <?=$immobili['username_del_proprietario']?> </td>
                 <td>  <?=$immobili['prezzo']    ?>  </td>
                 <td><?=$immobili['descrizione']?></td>
             <td> <img src="<?=$immobili['immagine']?>"  height="150" width="170"></td>
+            <td><?=$immobili['stato']?></td>
             <style>
 
             </style>
@@ -46,7 +50,7 @@ $pegeUrl = $_SERVER['PHP_SELF'];
                     </div>
                     <div class="row">
                         <div class = "col-md-4">
-                        <a  class ="btn btn-success" href="http://localhost/SWBD/esame-swbd/admin/aggiorna_immobile.php?id=<?=$immobili['id_immobile']?>">
+                        <a  class ="btn btn-success" href="http://localhost/SWBD/esame-swbd/admin/aggiorna_immobile.php?id=<?=$immobili['id_immobile']?>&indirizzo=<?=$immobili['indirizzo']?>&prezzo=<?=$immobili['prezzo']?>&descrizione=<?=$immobili['descrizione']?>&immagine=<?=$immobili['immagine']?>&userdelprop=<?=$immobili['username_del_proprietario']?>&state=<?=$immobili['stato']?>">
                     update <i class="fas fa-edit"></i>
                     </a>
                     </div>
