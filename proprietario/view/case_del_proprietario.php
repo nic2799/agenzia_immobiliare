@@ -48,13 +48,12 @@ $pegeUrl = $_SERVER['PHP_SELF'];
         <?php
         }
         echo '<tr> <td colspan = "5"> ';
-       require_once 'navigation.php';
+      
       echo '</td> </tr>';
     }else{
         
-        echo '<tr> <td colspan="5"> no found </td> </tr>'; 
-        require_once 'navigation.php';
-    }
+        echo '<tr> <td colspan="5"> no found </td> </tr>'; }
+       
     ?>
    
 

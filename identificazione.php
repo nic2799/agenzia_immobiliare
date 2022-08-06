@@ -1,5 +1,7 @@
 <?php    
 require('connection.php');
+
+    
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -26,10 +28,11 @@ if($row>0){
         echo 'corretto';
         session_start();
         $_SESSION['username'] = $row['username'];
+        
         if($row['ruolo']=='admin'){
         $_SESSION['admin'] = $row['ruolo'];
            
-          header( "location: ../esame-swbd/admin/index.php" );
+         header( "location: ../esame-swbd/admin/index.php" );
            
         }else if($row['ruolo']=='cliente'){
             $_SESSION['cliente'] = $row['ruolo'];

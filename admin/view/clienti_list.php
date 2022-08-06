@@ -5,20 +5,20 @@ $pegeUrl = $_SERVER['PHP_SELF'];
    <thead>
     <tr> <th colspan="5">TOTAL USER <?=$totalusers?> </th></tr>
     <tr>
-        <th>ID</th><!-- o anche page senza serve o scrivi direttamente $_SERVER[..] poi passiamo orderby-->
-        <th>indirizzo</th><!--quidi di base diamo questa stringa username ecc a orderby poi href è sulla pagina stessa e imponiamo orderby a quella stringa -->
-        <th>prezzo</th>
-        <th>Descrizione</th>
+        <th>username</th><!-- o anche page senza serve o scrivi direttamente $_SERVER[..] poi passiamo orderby-->
+        <th>email</th><!--quidi di base diamo questa stringa username ecc a orderby poi href è sulla pagina stessa e imponiamo orderby a quella stringa -->
+        <th>nome</th>
+        <th>cognome</th>
         <th>ruolo</th>
-       
-       
-
+        <th>elimina</th>
 
     </tr>
    </thead>
    <tbody>
    <form class = "d-flex" method ="get" action="<?=$pageUrl?>" id = "cercaform">
    <select class ="d-flex" id = "ruolo" name = "ruolo" >
+   
+
    <option name = "ruolo" value="proprietario">Proprietari</option>
     <option  name = "ruolo" value="cliente">Clienti</option>
    </select>
@@ -53,11 +53,12 @@ $pegeUrl = $_SERVER['PHP_SELF'];
         <?php
         }
         echo '<tr> <td colspan = "5"> ';
-       
+        
       echo '</td </tr>';
     }else{
         
         echo '<tr> <td colspan="5"> no found </td> </tr>'; 
+        
     }
     ?>
    

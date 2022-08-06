@@ -22,9 +22,10 @@ $pegeUrl = $_SERVER['PHP_SELF'];
     if($immobile){
         foreach($immobile as $immobili){
            // echo $immobili['immagine'] ;
+           if($immobili['stato']=='nonAcquistata'){
             ?>
             
-        
+       
             <tr>
                 <td><?=$immobili['id_immobile']?></td>
                 <td>   <?=$immobili['indirizzo']?> </td>
@@ -44,14 +45,12 @@ $pegeUrl = $_SERVER['PHP_SELF'];
                 </td>
         
         </tr>
-        <?php
+        <?php  }
         }
-        echo '<tr> <td colspan = "5"> ';
-       require_once 'navigation.php';
-      echo '</td> </tr>';
+      
     }else{
         echo '<tr> <td colspan="5"> no found </td> </tr>'; 
-        require_once 'navigation.php';
+       
     }
     ?>
    

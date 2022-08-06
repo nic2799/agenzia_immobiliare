@@ -1,5 +1,6 @@
 <?php
 require_once 'autentificazione.php';
+
 //session_start();
 //$sessionusername = $_SESSION['username'];
 //if($sessionusername==''){
@@ -38,14 +39,14 @@ require_once 'view/navbar.php';
         ?>
 
 
-    <h1 class="mt-5"> Benvenuto <?=$sessionusername?>, queste sono le case in vendita...</h1>
+    <h1 class="mt-5"> Benvenuto   <?=$sessionusername?>, queste sono le case in vendita...</h1>
     <?php      
         $params = [
             'cerca' => $cerca,
             'orderBy' => $orderBy,//se non ha nulla allora sara id ritornera getparam// verifica se esiste valore associato alla chiave 
             'recordsPerPage' => $recordsPerPage,
             'page' => $page,
-            //'test' => $test,
+            
              
         
         ];
@@ -56,6 +57,7 @@ require_once 'view/navbar.php';
 
         
         $immobile = getImmobili($params);
+      
         
         
         require_once 'view/listaimmobili.php';

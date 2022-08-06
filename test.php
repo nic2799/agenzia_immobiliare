@@ -1,1 +1,0 @@
-<h3>Utente registrato con successo <?=$ruolo?> </h3>

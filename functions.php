@@ -81,15 +81,13 @@ global $start;
 
 function getImmobili( array $params = []){
     $conn = $GLOBALS['mysqli'];//mysqli non è visibile all'interno della fun
-    $orderBy = array_key_exists('orderBy', $params) ? $params['orderBy'] : 'id_immobile';//varabile temporanea//prendi il valore di params associato alla stringa orderby
-    $limit = (int)array_key_exists('recordsPerPage', $params) ? $params['recordsPerPage'] : 5;
-    $page = (int)array_key_exists('page', $params) ? $params['page'] : 0;
+   
     $cerca = array_key_exists('cerca', $params) ? $params['cerca'] : '';
-    $sessionadmin = $_SESSION['admin'];
-   $start = 5 *($page -1);
-    if($start<0){
-        $start = 0;
-    }
+    
+    
+    
+    
+  
     
     
 
@@ -103,32 +101,27 @@ function getImmobili( array $params = []){
     if($cerca){
         $sql .= "WHERE indirizzo LIKE '%$cerca%' ";
         $sql .= " OR descrizione LIKE '%$cerca%'";
+        $sql .= " OR prezzo LIKE '%$cerca%'";
+        
         
     }
-    $sql.= " ORDER BY id_immobile LIMIT $start, 5 ";
+    $sql.= " ORDER BY id_immobile  ";
     //echo $sql;
     
    
     
     $res = $conn->query($sql);
-    
-    
+   
     if($res){
-        if(!($sessionadmin=='admin')){
+       
         
         while($row = $res->fetch_assoc()){// fecth assoc crea un array associativo dalla query
-            if($row['stato']=='nonAcquistata' || $row['stato']==''){
+           
        $records[]=$row;
-        }else{
-            //echo ' no ';
-        }
-    }
-}else{
-    while($row = $res->fetch_assoc()){
-        $records[]=$row;
+       
+       
     }
 
-}
       
 
     }else{echo "problema";}
@@ -211,48 +204,33 @@ function countUser( array $params = []){
 }echo countUser();
 
 
-function insertData(){
 
-
-
-
-    if(isset($_GET['test'])){
-        $test = $_GET['test'];
-        $conn = $GLOBALS['mysqli'];
-     
-     $query  = "INSERT into `immobili` (indirizzo)
-     VALUES ('$test')";
-      $res = $conn->query($query);
-    echo $test;
-    }
-}
 function getUserClienti(array $params = []){
     $conn = $GLOBALS['mysqli'];//mysqli non è visibile all'interno della fun
-    $orderBy = array_key_exists('orderBy', $params) ? $params['orderBy'] : 'id_immobile';//varabile temporanea//prendi il valore di params associato alla stringa orderby
-    $limit = (int)array_key_exists('recordsPerPage', $params) ? $params['recordsPerPage'] : 5;
-    $page = (int)array_key_exists('page', $params) ? $params['page'] : 0;
+  
+   
     $cerca = array_key_exists('cerca', $params) ? $params['cerca'] : '';
     $role =array_key_exists('role', $params) ? $params['role'] : '';
-    $start = 5 *($page -1);
-    if($start<0){
-        $start = 0;
+    if($role == ''){
+        $role = 'cliente';
+        
     }
 
 
     
-   // $cerca = array_key_exists('cerca', $params) ? $params['cerca'] : '';
     $records = [];
     
     
     $sql = "SELECT * FROM utente  WHERE ruolo ='$role' ";
     
     if($cerca){
-        $sql .= "OR username LIKE '%$cerca%' ";
+        $sql .= "AND username LIKE '%$cerca%' ";
         $sql .= " OR email LIKE '%$cerca%'";
+        $sql .= " OR Cognome LIKE '%$cerca%'";
         
     }
-    //$sql.= " ORDER BY username LIMIT $start, 100";
-    //echo $sql;
+    $sql.= " ORDER BY username  ";
+    
     
    
     
@@ -265,7 +243,7 @@ function getUserClienti(array $params = []){
            
        $records[]=$row;
        
-          //  echo ' no ';
+          
         }
     }else{echo 'prob';}
    

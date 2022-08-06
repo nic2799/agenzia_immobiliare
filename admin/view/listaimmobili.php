@@ -29,22 +29,18 @@ $pegeUrl = $_SERVER['PHP_SELF'];
         
             <tr>
                 <td><?=$immobili['id_immobile']?></td>
-                <td>   <?=$immobili['indirizzo']?> </td>
-                <td>   <?=$immobili['username_del_proprietario']?> </td>
-                <td>  <?=$immobili['prezzo']    ?>  </td>
+                <td><?=$immobili['indirizzo']?></td>
+                <td><?=$immobili['username_del_proprietario']?></td>
+                <td><?=$immobili['prezzo']?></td>
                 <td><?=$immobili['descrizione']?></td>
             <td> <img src="<?=$immobili['immagine']?>"  height="150" width="170"></td>
             <td><?=$immobili['stato']?></td>
-            <style>
-
-            </style>
-            
+         
                 <td> 
                     
                     <div class="row">
                         <div class = "col-md-4">
-                        <a onclick="return confirm('sei sicuro')" class ="btn btn-danger" href="<?=$updateurl?>?id_immobile=<?=$immobili['id_immobile']?>">
-                    elimina <i class="fas fa-ban"></i>
+                        <a onclick="return confirm('sei sicuro')" class ="btn btn-danger" href="<?=$updateurl?>?id_immobile=<?=$immobili['id_immobile']?>"> elimina <i class="fas fa-ban"></i>
                     </a>
                     </div>
                     </div>
@@ -63,12 +59,10 @@ $pegeUrl = $_SERVER['PHP_SELF'];
         </tr>
         <?php
         }
-        echo '<tr> <td colspan = "5"> ';
-       require_once 'navigation.php';
-      echo '</td> </tr>';
+        
     }else{
         echo '<tr> <td colspan="5"> no found </td> </tr>'; 
-        require_once 'navigation.php';
+        
     }
     ?>
    

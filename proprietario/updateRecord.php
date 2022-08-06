@@ -144,7 +144,7 @@ function getPrenotati(array $params = []){
   $records = [];
     $session = $params['sessionUsername'];
     
-  $sql = "SELECT data FROM prenotazioni WHERE  usernameProp = '$session' ";
+  $sql = "SELECT * FROM prenotazioni WHERE  usernameProp = '$session'  ";
   $res = $conn->query($sql);
 
   if($res){

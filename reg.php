@@ -42,7 +42,7 @@ if(isset($_POST['username'])){
             <div class='box'>
             <div class='form'>
             <h3>Errore nella Registrazione. Uno o piu' campi non sono corretti o già in utilizzo.</h3><br/>
-            <p class='link'>Clicca qui per <a href='http://localhost:80/SWBD/Registrazione.php'>registrarti</a> di nuovo.</p>
+            <p class='link'>Clicca qui per <a href='http://localhost:80/SWBD/esame-swbd/Registrazione.php'>registrarti</a> di nuovo.</p>
             </div></div></div>";
         }
    

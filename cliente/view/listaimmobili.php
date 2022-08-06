@@ -20,8 +20,10 @@ $pegeUrl = $_SERVER['PHP_SELF'];
    <tbody>
     <?php
     if($immobile){
+        
         foreach($immobile as $immobili){
-           // echo $immobili['immagine'] ;
+           
+           if($immobili['stato']=='nonAcquistata'){
             ?>
             
         
@@ -31,6 +33,7 @@ $pegeUrl = $_SERVER['PHP_SELF'];
                 <td>  <?=$immobili['prezzo']    ?>  </td>
                 <td><?=$immobili['descrizione']?></td>
             <td> <img src="<?=$immobili['immagine']?>"  height="150" width="170"></td>
+           
             <style>
 
             </style>
@@ -51,25 +54,34 @@ $pegeUrl = $_SERVER['PHP_SELF'];
                            <button class="form-control" type="submit"> prenota  <i class="fas fa-share"></i></button>
                           
                           </form>
+                          
                           </div>
+                         
                     </div>
+                    
                     </div>
                    
-                
-                    
+                  
+                   
                        
                         
                 </td>
-        
+                
+                   
+                
         </tr>
-        <?php
-        }
-        echo '<tr> <td colspan = "5"> ';
-       require_once 'navigation.php';
-      echo '</td> </tr>';
+        
+        <?php 
+        
+        
+      }
+           }
+           
+           
+          
     }else{
         echo '<tr> <td colspan="5"> no found </td> </tr>'; 
-        require_once 'navigation.php';
+        
     }
     ?>
    
