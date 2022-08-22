@@ -100,6 +100,7 @@ function getImmobili( array $params = []){
     
     if($cerca){
         $sql .= "WHERE indirizzo LIKE '%$cerca%' ";
+       
         $sql .= " OR descrizione LIKE '%$cerca%'";
         $sql .= " OR prezzo LIKE '%$cerca%'";
         
